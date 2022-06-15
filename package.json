@@ -1,0 +1,22 @@
+{
+  "name": "design-pattern",
+  "version": "1.0.0",
+  "description": "## 목차",
+  "main": "examples/js/singleton.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJongTaeng/design-pattern-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JJongTaeng/design-pattern-js/issues"
+  },
+  "homepage": "https://github.com/JJongTaeng/design-pattern-js#readme",
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+}
