@@ -1,32 +1,30 @@
-class Counter {
-  counter = 0;
-  useConstructor = false;
+let instance;
+let counter = 0;
 
+class Counter {
   constructor() {
-    if(!this.useConstructor) {
-      throw new Error("You can only create one instance!"); // 인스턴스 생성 시 에러 발생
+    if (instance) {
+      throw new Error("You can only create one instance!");
     }
+    instance = this;
   }
 
-  static getInstance() {
-    return this.instance || (this.instance = new this(false));
+  getInstance() {
+    return this;
   }
 
   getCount() {
-    return this.counter;
+    return counter;
   }
 
   increment() {
-    return ++this.counter;
+    return ++counter;
   }
 
   decrement() {
-    return --this.counter;
+    return --counter;
   }
 }
 
-//
-// const singletonCounter = Object.freeze(new Counter()); // Object.freeze를 사용해서 업데이트, 추가, 삭제 불가능
-// export default singletonCounter;
-
-export default Counter;
+const singletonCounter = Object.freeze(new Counter());
+export default singletonCounter;
