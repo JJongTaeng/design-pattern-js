@@ -13,9 +13,10 @@
 
 ```javascript
 let instance;
+
 class Counter {
   counter = 0;
-  
+
   constructor() {
     if(instance) {
       throw new Error("You can only create one instance!"); // 인스턴스 생성 시 에러 발생
@@ -45,27 +46,28 @@ export default singletonCounter;
 ```
 
 ### example typescript
+
 ```typescript
 class Counter {
 
   private static instance: Counter;
 
-  public counter:number;
+  public counter: number;
 
   // new 클래스 구문 사용 제한을 목적으로
   // constructor() 함수 앞에 private 접근 제어자 추가
   private constructor() {
   }
-  
+
   // 오직 getInstance() 스태틱 메서드를 통해서만
   // 단 하나의 객체를 생성할 수 있습니다.
   public static getInstance() {
-    if (!Counter.instance) {
+    if(!Counter.instance) {
       Counter.instance = new Counter();
     }
     return Counter.instance;
   }
-  
+
   getInstance() {
     return this;
   }
@@ -84,6 +86,13 @@ class Counter {
 }
 ```
 
-해당 형태의 싱긑톤 패턴은 스레드 세이프하지 않습니다. 
-왜냐하면 if(!Counter.instance) 이 부분에서 다른 스레드가 동시에 평가를 내려서 새로운 Counter 인스턴스를 생성할 수 있기 때문입니다.
+해당 형태의 싱긑톤 패턴은 스레드 세이프하지 않습니다. 왜냐하면 if(!Counter.instance) 이 부분에서 다른 스레드가 동시에 평가를 내려서 새로운 Counter 인스턴스를 생성할 수 있기 때문입니다.
 하지만 기본적으로 자바스크립트는 단일 스레드 환경이기 때문에 괜찮습니다.
+
+## 팩토리 메소드 패턴
+
+구체적으로 어떤 인스턴스를 만들지 서브 클래스가 정합니다.
+
+- 다양한 구현체가 있고, 그 중에서 특정한 구현체를 만들 수 있는 다양한 팩토리(Creator)를 제공할 수 있습니다.
+
+

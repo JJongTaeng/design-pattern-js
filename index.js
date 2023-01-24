@@ -1,4 +1,4 @@
-import Counter from "./examples/js/singleton.js";
+import Counter from "./examples/singleton/js/singleton.js";
 
 const redButton = document.querySelector('.red-button');
 const blueButton = document.querySelector('.blue-button');

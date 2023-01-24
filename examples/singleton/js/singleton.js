@@ -3,7 +3,7 @@ let counter = 0;
 
 class Counter {
   constructor() {
-    if (instance) {
+    if(instance) {
       throw new Error("You can only create one instance!");
     }
     instance = this;
