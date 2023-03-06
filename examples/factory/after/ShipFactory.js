@@ -4,10 +4,10 @@ exports.ShipFactory = void 0;
 var ShipFactory = /** @class */ (function () {
     function ShipFactory() {
     }
-    ShipFactory.prototype.orderShip = function (name, email) {
-        this.validate(name, email);
-        this.prepareFor(name);
+    ShipFactory.prototype.orderShip = function (email) {
         var ship = this.createShip();
+        this.prepareFor(ship.getName());
+        this.validate(ship.getName(), email);
         this.sendEmailTo(email, ship);
         return ship;
     };

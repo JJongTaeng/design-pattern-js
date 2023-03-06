@@ -4,8 +4,8 @@ import { Client } from "./Client";
 
 class App {
   start() {
-    Client.order(new WhiteShipFactory(), 'whiteship', 'jjojjo141995@gmail.com');
-    Client.order(new BlackShipFactory(), 'blackship', 'jjojjo141995@gmail.com');
+    Client.order(new WhiteShipFactory(), 'jjojjo141995@gmail.com');
+    Client.order(new BlackShipFactory(),  'jjojjo141995@gmail.com');
   }
 }
 

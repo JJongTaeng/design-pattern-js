@@ -7,8 +7,8 @@ var App = /** @class */ (function () {
     function App() {
     }
     App.prototype.start = function () {
-        Client_1.Client.order(new WhiteShipFactory_1.WhiteShipFactory(), 'whiteship', 'jjojjo141995@gmail.com');
-        Client_1.Client.order(new BlackShipFactory_1.BlackShipFactory(), 'blackship', 'jjojjo141995@gmail.com');
+        Client_1.Client.order(new WhiteShipFactory_1.WhiteShipFactory(), 'jjojjo141995@gmail.com');
+        Client_1.Client.order(new BlackShipFactory_1.BlackShipFactory(), 'jjojjo141995@gmail.com');
     };
     return App;
 }());

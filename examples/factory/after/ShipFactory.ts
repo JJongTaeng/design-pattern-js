@@ -3,10 +3,10 @@ import { Ship } from "./Ship";
 export abstract class ShipFactory {
   abstract createShip(): Ship;
 
-  orderShip(name: string, email: string) {
-    this.validate(name, email);
-    this.prepareFor(name);
+  orderShip(email: string) {
     const ship = this.createShip();
+    this.prepareFor(ship.getName());
+    this.validate(ship.getName(), email);
     this.sendEmailTo(email, ship);
     return ship;
   }
